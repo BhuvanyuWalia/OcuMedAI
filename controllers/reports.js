@@ -31,7 +31,7 @@ module.exports.submitReport = async (req, res) => {
   // Call FastAPI
   let predictions;
   try {
-    const apiResponse = await axios.post("https://ocumedai-fastapi.onrender.com/predict", form, {
+    const apiResponse = await axios.post("https://ocumedsweb.azurewebsites.net/predict", form, {
       headers: form.getHeaders()
     });
     predictions = apiResponse.data;

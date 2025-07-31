@@ -6,17 +6,18 @@
   <p><strong>Date:</strong> <%= report.createdAt.toDateString() %></p>
   <p><strong>Age:</strong> <%= report.age %></p>
   <p><strong>Sex:</strong> <%= report.sex %></p>
-  <p><strong>BMI:</strong> <%= report.bmi %></p>
-  <p><strong>Diabetic Retinopathy Stage:</strong> <%= report.dr_level %></p>
-  <p><strong>Hypertension Risk:</strong> <%= report.htn_risk %>%</p>
-  <p><strong>HbA1c Level:</strong> <%= report.hba1c %></p>
-  <p><strong>Atherosclerosis Risk:</strong> <%= report.atherosclerosis_risk %>%</p>
+  <p><strong>BMI:</strong> <%= report.BMI %></p>
+  <p><strong>Diabetic Retinopathy Stage:</strong> <%= report.diabeticRetinopathyLevel %></p>
+  <p><strong>Hypertension Risk:</strong> <%= report.hypertensionRisk %>%</p>
+  <p><strong>HbA1c Level:</strong> <%= report.hba1cLevel %></p>
+  <p><strong>Atherosclerosis Risk:</strong> <%= report.atherosclerosisRisk %>%</p>
 
   <div class="text-center mt-4">
-    <img src="<%= report.image_url %>" alt="FUNDUS Image" class="img-fluid border border-dark rounded">
+    <img src="<%= report.imageUrl %>" alt="FUNDUS Image" class="img-fluid border border-dark rounded">
   </div>
 </div>
 
 <div class="text-center mt-4">
   <a href="/reports" class="btn btn-dark">Back to Reports</a>
 </div>
+
