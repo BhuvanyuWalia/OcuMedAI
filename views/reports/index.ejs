@@ -9,8 +9,7 @@
     <div class="list-group">
       <% reports.forEach(report => { %>
         <a href="/reports/<%= report._id %>" class="list-group-item list-group-item-action">
-          <strong><%= report.createdAt.toDateString() %></strong> – DR: <%= report.dr_level %>, HTN: <%= report.htn_risk %>%
-        </a>
+          <strong><%= report.createdAt.toDateString() %></strong>
       <% }) %>
     </div>
   <% } %>
