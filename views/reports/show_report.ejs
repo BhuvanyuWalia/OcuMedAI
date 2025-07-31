@@ -1,8 +1,66 @@
 <% layout("layouts/boilerplate") %>
 
-<h2 class="text-center mt-4">Report Details</h2>
+<style>
+  body {
+    background-image: url("/images/background_image.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Helvetica', sans-serif;
+    color: #2c2c2c;
+  }
 
-<div class="col-md-8 offset-md-2 user-form mt-3">
+  .glass-report {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 750px;
+    margin: 3rem auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .glass-report h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .glass-report p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .fundus-image {
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 2rem;
+    border: 3px solid #444;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .btn-dark {
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 0.6rem 1.5rem;
+    margin-top: 1.5rem;
+    background-color: #2d3436;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-dark:hover {
+    background-color: #3c4b5c;
+    transform: translateY(-2px);
+  }
+</style>
+
+<div class="glass-report">
+  <h2>Report Details</h2>
+
   <p><strong>Date:</strong> <%= report.createdAt.toDateString() %></p>
   <p><strong>Age:</strong> <%= report.age %></p>
   <p><strong>Sex:</strong> <%= report.sex %></p>
@@ -12,12 +70,11 @@
   <p><strong>HbA1c Level:</strong> <%= report.hba1cLevel %></p>
   <p><strong>Atherosclerosis Risk:</strong> <%= report.atherosclerosisRisk %>%</p>
 
-  <div class="text-center mt-4">
-    <img src="<%= report.imageUrl %>" alt="FUNDUS Image" class="img-fluid border border-dark rounded">
+  <div class="text-center">
+    <img src="<%= report.imageUrl %>" alt="FUNDUS Image" class="fundus-image">
+  </div>
+
+  <div class="text-center">
+    <a href="/reports" class="btn btn-dark">Back to Reports</a>
   </div>
 </div>
-
-<div class="text-center mt-4">
-  <a href="/reports" class="btn btn-dark">Back to Reports</a>
-</div>
-
