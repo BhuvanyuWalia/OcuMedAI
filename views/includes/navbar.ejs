@@ -1,24 +1,64 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+<style>
+  .navbar-custom {
+    background-color: #030c16; /* Deep Navy */
+  }
+
+  .navbar-custom .nav-link,
+  .navbar-custom .navbar-brand {
+    color: #f1f1f1;
+    font-size: 1.1rem; /* Larger font */
+  }
+
+  .navbar-custom .nav-link:hover {
+    color: #FFD700; /* Golden hover */
+    font-weight: 600;
+  }
+
+  .navbar-custom .navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+  }
+
+  .navbar-custom .nav-link strong {
+    color: #ffffff;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-custom shadow-sm sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold" href="/home">OcuMedAI</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
         <% if(currentUser) { %>
-          <li class="nav-item"><a class="nav-link" href="/reports/new">New Report</a></li>
-          <li class="nav-item"><a class="nav-link" href="/reports">My Reports</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/reports/new">New Report</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/reports">My Reports</a>
+          </li>
         <% } %>
       </ul>
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if(!currentUser) { %>
-          <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
         <% } else { %>
-          <li class="nav-item"><span class="nav-link">Welcome, <strong><%= currentUser.name %></strong></span></li>
-          <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+          <li class="nav-item">
+            <span class="nav-link">Welcome, <strong><%= currentUser.name %></strong></span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
         <% } %>
       </ul>
     </div>

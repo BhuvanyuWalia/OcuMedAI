@@ -1,6 +1,6 @@
 body {
-  background-color: #f9fbfd;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("/images/background_image.png");
+  font-family: Helvetica, sans-serif;
 }
 
 h1, h2, h3 {

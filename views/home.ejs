@@ -1,17 +1,80 @@
 <% layout("layouts/boilerplate") %>
 
-<div class="text-center my-5">
-  <h1 class="display-4 fw-bold text-primary">
-    Welcome <%= currentUser ? currentUser.name : "to OcuMedAI" %> 👁️‍🗨️
+<style>
+  body {
+    background-image: url("/images/background_image.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Helvetica', sans-serif;
+    color: #2c2c2c;
+  }
+
+  .glass-home {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 750px;
+    margin: 5rem auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+
+  .glass-home h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .glass-home p.lead {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  .glass-home a.btn {
+    font-size: 1.1rem;
+    border-radius: 12px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  }
+
+  .glass-home a.btn-primary {
+    background-color: #5680e9;
+    border: none;
+  }
+
+  .glass-home a.btn-primary:hover {
+    background-color: #456bd0;
+    transform: translateY(-2px);
+  }
+
+  .glass-home a.btn-success {
+    background-color: #58b368;
+    border: none;
+  }
+
+  .glass-home a.btn-success:hover {
+    background-color: #489956;
+    transform: translateY(-2px);
+  }
+</style>
+
+<div class="glass-home">
+  <h1>
+    Welcome <%= currentUser ? currentUser.name : "to OcuMedAI" %>
   </h1>
-  <p class="lead text-secondary">A Deep Learning–powered Health Risk Analyzer</p>
+  <p class="lead">A Deep Learning–powered Health Risk Analyzer</p>
 
   <% if(currentUser) { %>
-    <a href="/reports/new" class="btn btn-primary btn-lg mt-4 px-4 py-2">
+    <a href="/reports/new" class="btn btn-primary btn-lg">
       <i class="bi bi-plus-circle"></i> Create New Report
     </a>
   <% } else { %>
-    <a href="/login" class="btn btn-success mt-4 px-4 py-2">
+    <a href="/login" class="btn btn-success btn-lg">
       <i class="bi bi-box-arrow-in-right"></i> Login to Get Started
     </a>
   <% } %>
